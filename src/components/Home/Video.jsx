@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import css from "../../styles/Video.module.css";
 
 export default function Video({ img, txt, numQ, score = "Not taken yet" }) {
   return (
-    <a href="quiz.html">
+    <Link to="/quiz">
       <div className={css.video}>
         <img src={img} alt="Quiz Image" />
         <p>{txt}</p>
@@ -11,6 +12,6 @@ export default function Video({ img, txt, numQ, score = "Not taken yet" }) {
           <p>{`Score : ${score}`}</p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

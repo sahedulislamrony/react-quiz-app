@@ -5,6 +5,8 @@ import Form from "../Form/Form";
 import Input from "../Form/Input";
 import Illustration from "../Illustration";
 
+import { Link } from "react-router-dom";
+
 export default function Login() {
   return (
     <>
@@ -17,7 +19,7 @@ export default function Login() {
           <Button>Submit Now</Button>
 
           <div className="info">
-            Don&apos;t have an account? <a href="signup.html">Signup</a>{" "}
+            Don&apos;t have an account? <Link to="/signup">Signup</Link>{" "}
             instead.
           </div>
         </Form>

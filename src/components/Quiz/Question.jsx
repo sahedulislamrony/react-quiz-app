@@ -1,4 +1,3 @@
-import css from "../../styles/Answers.module.css";
 import Answers from "./Answers";
 import MiniPlayer from "./MiniPlayer";
 import Option from "./Option";
@@ -13,7 +12,7 @@ export default function Question(props) {
       <h1> {title} </h1>
       <h4>Question can have multiple answers</h4>
       <Answers>
-        <Option htmlFor="option1" className={css.correct}>
+        <Option htmlFor="option1" className="correct">
           A New Hope 1
         </Option>
         <Option htmlFor="option2"> A New Hope 2 </Option>
@@ -21,7 +20,7 @@ export default function Question(props) {
         <Option htmlFor="option4"> A New Hope 4 </Option>
         <Option htmlFor="option5"> A New Hope 5 </Option>
         <Option htmlFor="option6"> A New Hope 6 </Option>
-        <Option htmlFor="option7" className={css.wrong}>
+        <Option htmlFor="option7" className="wrong">
           A New Hope 7
         </Option>
         <Option htmlFor="option8"> A New Hope 8 </Option>

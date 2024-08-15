@@ -9,7 +9,7 @@ export default function Option(props) {
     setChecked(event.target.checked);
   };
   return (
-    <label className={`${css.answer} ${className}`} htmlFor={htmlFor}>
+    <label className={`${css.answer} ${css[className]}`} htmlFor={htmlFor}>
       <input
         type="checkbox"
         id={htmlFor}

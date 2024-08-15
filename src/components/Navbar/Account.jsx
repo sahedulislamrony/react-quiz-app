@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import css from "../../styles/Account.module.css";
 
 export default function Account({ icon }) {
@@ -6,7 +7,8 @@ export default function Account({ icon }) {
       <span className="material-icons-outlined" title="Account">
         {icon}
       </span>
-      <a href="signup.html">Signup</a>
+      <Link to="/signup">Signup</Link>
+      <Link to="/login">Login</Link>
 
       {/* <span class="material-icons-outlined" title="Logout"> logout </span> */}
     </div>

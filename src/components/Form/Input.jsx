@@ -4,7 +4,7 @@ import css from "../../styles/Input.module.css";
 export default function Input(props) {
   let { type, placeholder, icon } = props;
 
-  let [value, setValue] = useState(null);
+  let [value, setValue] = useState();
 
   let handleChange = (e) => {
     setValue(() => {
