@@ -1,37 +1,25 @@
-import css from "../../styles/Signup.module.css";
-import Form from "../Form/Form";
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../../assets/images/signup.svg";
-import Button from "../Button";
-import Checkbox from "../Form/Checkbox";
-import Input from "../Form/Input";
+import { useAuth } from "../../contexts/AuthContext";
 import Illustration from "../Illustration";
-
-import { Link } from "react-router-dom";
+import SignupForm from "../SignupForm";
 
 export default function Signup() {
+  let { currentUser } = useAuth();
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/");
+    }
+  }, [currentUser, navigate]);
   return (
     <>
       <h1>Create an account</h1>
       <div className="column">
         <Illustration img={img} />
-
-        <Form className={`${css.signup}`}>
-          <Input type="text" placeholder="Enter name" icon="person" />
-          <Input type="text" placeholder="Enter email" icon="alternate_email" />
-          <Input type="password" placeholder="Enter password" icon="lock" />
-          <Input
-            type="password"
-            placeholder="Confirm password"
-            icon="lock_clock"
-          />
-          <Checkbox>I agree to the Terms & Conditions</Checkbox>
-          <Button>Submit Now</Button>
-
-          <div className="info">
-            Already have an account? <Link to="/login">Login</Link> instead.
-          </div>
-        </Form>
+        <SignupForm />
       </div>
     </>
   );

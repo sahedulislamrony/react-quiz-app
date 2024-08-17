@@ -1,9 +1,9 @@
 import css from "../styles/Button.module.css";
 
-export default function Button({ children }) {
+export default function Button({ children, ...rest }) {
   return (
-    <div className={css.button} role="button">
+    <button className={css.button} role="button" {...rest}>
       <span>{children}</span>
-    </div>
+    </button>
   );
 }

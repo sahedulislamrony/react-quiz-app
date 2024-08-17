@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import img from "../../assets/images/3.jpg";
 import Video from "../Home/Video";
 import Videos from "../Home/Videos";
+
 export default function Home() {
   return (
     <Videos>

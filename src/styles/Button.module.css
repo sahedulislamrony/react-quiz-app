@@ -24,3 +24,28 @@
 .button:hover span {
   color: #fff;
 }
+.button:disabled {
+  background: var(--fontPrimary);
+  color: #fff;
+}
+
+.button:disabled:hover {
+  background: var(--fontPrimary);
+  color: #fff;
+}
+
+.button:-moz-user-disabled {
+  background: var(--fontPrimary);
+  color: #fff;
+}
+.button:-moz-user-disabled:hover {
+  background: var(--fontPrimary);
+  color: #fff;
+}
+
+.button:disabled span {
+  color: #fff;
+}
+.button:-moz-user-disabled span {
+  color: #fff;
+}

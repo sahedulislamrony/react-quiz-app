@@ -1,28 +1,26 @@
 import img from "../../assets/images/login.svg";
-import css from "../../styles/Login.module.css";
-import Button from "../Button";
-import Form from "../Form/Form";
-import Input from "../Form/Input";
 import Illustration from "../Illustration";
 
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import LoginForm from "../LoginForm";
 
 export default function Login() {
+  let { currentUser } = useAuth();
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/");
+    }
+  }, [currentUser, navigate]);
   return (
     <>
       <h1>Login to your account</h1>
       <div className="column">
         <Illustration img={img} />
-        <Form className={`${css.login}`}>
-          <Input type="text" placeholder="Enter email" icon="alternate_email" />
-          <Input type="password" placeholder="Enter password" icon="lock" />
-          <Button>Submit Now</Button>
-
-          <div className="info">
-            Don&apos;t have an account? <Link to="/signup">Signup</Link>{" "}
-            instead.
-          </div>
-        </Form>
+        <LoginForm />
       </div>
     </>
   );

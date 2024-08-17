@@ -1,16 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import css from "../../styles/Account.module.css";
 
+import { useAuth } from "../../contexts/AuthContext";
 export default function Account({ icon }) {
+  let { currentUser, logout } = useAuth();
+  let navigate = useNavigate();
+
+  async function handleLogout() {
+    try {
+      await logout();
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className={css.account}>
-      <span className="material-icons-outlined" title="Account">
-        {icon}
-      </span>
-      <Link to="/signup">Signup</Link>
-      <Link to="/login">Login</Link>
-
-      {/* <span class="material-icons-outlined" title="Logout"> logout </span> */}
+      {currentUser ? (
+        <>
+          <span className="material-icons-outlined" title="Account">
+            {icon}
+          </span>
+          {currentUser.displayName}
+          {"  "}
+          <span
+            className="material-icons-outlined"
+            title="Logout"
+            onClick={handleLogout}
+          >
+            logout
+          </span>
+        </>
+      ) : (
+        <>
+          <Link to="/signup">Signup</Link>
+          <Link to="/login">Login</Link>
+        </>
+      )}
     </div>
   );
 }
