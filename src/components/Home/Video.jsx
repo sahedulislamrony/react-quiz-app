@@ -1,17 +1,21 @@
-import { Link } from "react-router-dom";
 import css from "../../styles/Video.module.css";
 
-export default function Video({ img, txt, numQ, score = "Not taken yet" }) {
+export default function Video({ title, id, noq }) {
   return (
-    <Link to="/quiz">
-      <div className={css.video}>
-        <img src={img} alt="Quiz Image" />
-        <p>{txt}</p>
-        <div className={css.qmeta}>
-          <p>{`${numQ} Questions`}</p>
-          <p>{`Score : ${score}`}</p>
-        </div>
+    <div className={css.video}>
+      <img
+        src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+        alt="Quiz Image"
+      />
+      <p>{title}</p>
+      <div className={css.qmeta}>
+        <p>{`${noq} Questions`}</p>
+        <p>{`Total mark : ${noq * 2}`}</p>
       </div>
-    </Link>
+    </div>
   );
 }
+
+// http://img.youtube.com/vi/${id}/maxresdefault.jpg
+
+// youtube api for requesting video thubmnail through video id
