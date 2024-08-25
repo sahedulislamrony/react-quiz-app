@@ -1,18 +1,25 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import ReactPlayer from "react-player/youtube";
 import css from "../../styles/MiniPlayer.module.css";
-
-let handleOpen = (card, playerBtn) => {
-  playerBtn.current.style.display = "none";
-  card.current.style.display = "block";
-};
-let handleClose = (card, playerBtn) => {
-  card.current.style.display = "none";
-  playerBtn.current.style.display = "flex";
-};
 
 export default function MiniPlayer({ id, title }) {
   let card = useRef(null);
   let playerBtn = useRef(null);
+
+  let [status, setStatus] = useState(false);
+
+  let videoURL = `https://www.youtube.com/watch?v=${id}`;
+
+  let handleOpen = (card, playerBtn) => {
+    playerBtn.current.style.display = "none";
+    card.current.style.display = "block";
+    setStatus(true);
+  };
+  let handleClose = (card, playerBtn) => {
+    card.current.style.display = "none";
+    playerBtn.current.style.display = "flex";
+    setStatus(false);
+  };
 
   return (
     <div className={css.miniPlayer}>
@@ -32,9 +39,13 @@ export default function MiniPlayer({ id, title }) {
         >
           close
         </span>
-        <img
-          src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
-          alt="Video Thumbnail"
+        <ReactPlayer
+          className={css.player}
+          width="300px"
+          height="168px"
+          playing={status}
+          controls
+          url={videoURL}
         />
         <p>{title}</p>
       </div>

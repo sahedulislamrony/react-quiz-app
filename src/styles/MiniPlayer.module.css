@@ -33,7 +33,7 @@
   display: none;
 }
 
-.card img {
+.card .player {
   width: 300px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
