@@ -44,7 +44,6 @@ This project is built using [**`Vite`**](https://vitejs.dev/) , a fast build too
 **`CSE Undergraduate/Programmer`**
 
 <br />
-<br />
 
 # Find me on
 
