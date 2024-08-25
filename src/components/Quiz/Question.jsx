@@ -98,7 +98,7 @@ export default function Question() {
   return (
     <>
       {loading && <h2>Loading...</h2>}
-      {error && <h2 style={{ color: "red" }}>There was error!</h2>}
+      {error && <h2 style={{ color: "red" }}>There was an error !</h2>}
 
       {!loading && !error && quesCopy && quesCopy.length > 0 && (
         <>

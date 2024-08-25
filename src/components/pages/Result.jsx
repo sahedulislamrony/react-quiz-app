@@ -39,7 +39,7 @@ export default function Result() {
 
   // check if user direct hit the result page
   if (!result) {
-    return <h1 style={{ color: "red" }}>There was an error !</h1>;
+    return <h2 style={{ color: "red" }}>There was an error !</h2>;
   }
 
   const score = calculateScore(5);
