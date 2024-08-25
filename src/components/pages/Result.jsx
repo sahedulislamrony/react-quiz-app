@@ -37,11 +37,17 @@ export default function Result() {
     return score * weight;
   }
 
+  // check if user direct hit the result page
+  if (!result) {
+    return <h1 style={{ color: "red" }}>There was an error !</h1>;
+  }
+
   const score = calculateScore(5);
 
   return (
     <>
       <PageTitle title="Result || React Quiz App" />
+
       {loading && <h2>Loading...</h2>}
       {error && <h2>There is an error </h2>}
       {!loading && !error && answers && answers.length > 0 && (
