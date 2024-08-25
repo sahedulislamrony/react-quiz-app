@@ -10,7 +10,7 @@ let handleClose = (card, playerBtn) => {
   playerBtn.current.style.display = "flex";
 };
 
-export default function MiniPlayer({ img, title }) {
+export default function MiniPlayer({ id, title }) {
   let card = useRef(null);
   let playerBtn = useRef(null);
 
@@ -32,7 +32,10 @@ export default function MiniPlayer({ img, title }) {
         >
           close
         </span>
-        <img src={img} alt="Video Thumbnail" />
+        <img
+          src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+          alt="Video Thumbnail"
+        />
         <p>{title}</p>
       </div>
     </div>

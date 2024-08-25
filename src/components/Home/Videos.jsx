@@ -16,12 +16,16 @@ function Videos() {
         <InfiniteScroll
           dataLength={videos.length}
           hasMore={hasMore}
-          loader="Loading..."
+          loader={<h3>Loading...</h3>}
           next={() => setPage((prevPage) => prevPage + 8)}
         >
           {videos.map((video, index) =>
             video.noq > 0 ? (
-              <Link to="/quiz" key={video.youtubeID + index}>
+              <Link
+                to={`/quiz/${video.youtubeID}`}
+                state={video.title}
+                key={video.youtubeID + index}
+              >
                 <Video
                   title={video.title}
                   id={video.youtubeID}

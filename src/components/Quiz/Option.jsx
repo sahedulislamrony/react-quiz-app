@@ -1,22 +1,18 @@
-import { useState } from "react";
 import css from "../../styles/Answers.module.css";
 
 export default function Option(props) {
-  let { className, children, htmlFor } = props;
-  const [checked, setChecked] = useState(false);
+  let { title, index, handleChange, checked } = props;
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
   return (
-    <label className={`${css.answer} ${css[className]}`} htmlFor={htmlFor}>
+    <label className={css.answer} htmlFor={`option${index}`}>
       <input
         type="checkbox"
-        id={htmlFor}
-        onChange={handleChange}
+        id={`option${index}`}
+        value={index}
+        onChange={(e) => handleChange(e, index)}
         checked={checked}
       />
-      {children}
+      {title}
     </label>
   );
 }

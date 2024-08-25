@@ -9,7 +9,7 @@ let handleOut = (tooltip) => {
   tooltip.current.style.display = "none";
 };
 
-export default function Range({ value }) {
+export default function Range({ progress }) {
   let tooltip = useRef(null);
 
   return (
@@ -17,9 +17,9 @@ export default function Range({ value }) {
       <div
         className={css.tooltip}
         ref={tooltip}
-        style={{ left: `${value - 5.5}%` }}
+        style={{ left: `${progress - 5.5}%` }}
       >
-        {`${value}%`} Complete!
+        {`${progress}%`} Complete!
       </div>
 
       <div className={css.rangeBody}>
@@ -27,7 +27,7 @@ export default function Range({ value }) {
           className={css.progress}
           onMouseOver={() => handleOver(tooltip)}
           onMouseOut={() => handleOut(tooltip)}
-          style={{ width: `${value}%` }}
+          style={{ width: `${progress}%` }}
         ></div>
       </div>
     </div>

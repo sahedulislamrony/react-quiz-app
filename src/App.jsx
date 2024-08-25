@@ -28,8 +28,8 @@ export default function App() {
             </Route>
 
             <Route element={<PrivateRoute />} path="/*">
-              <Route path="quiz" element={<Quiz />} />
-              <Route path="result" element={<Result />} />
+              <Route path="quiz/:id" element={<Quiz />} />
+              <Route path="result/:id" element={<Result />} />
             </Route>
 
             {/* Page Not Found (404) Route */}
