@@ -1,4 +1,4 @@
-import img from "../../assets/images/success.png";
+import img from "../../assets/images/result.svg";
 import css from "../../styles/Summary.module.css";
 
 export default function Summary({ total, score }) {
@@ -6,10 +6,10 @@ export default function Summary({ total, score }) {
     <div className={css.summary}>
       <div className={css.point}>
         {/* <!-- progress bar will be placed here --> */}
-        <p className={css.score}>
+        <h1 className={css.score}>
           Your score is <br />
           {score} out of {total}
-        </p>
+        </h1>
       </div>
 
       <div className={css.badge}>

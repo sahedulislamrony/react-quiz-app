@@ -1,10 +1,11 @@
 /* illustration component */
 .illustration {
-  padding: 5rem 2rem;
+  padding: 2.5rem 2rem;
+  padding-top: 0;
 }
 
-.illustration img {
-  max-width: 80%;
+.illustration .player {
+  max-width: 90%;
 }
 
 @media only screen and (max-width: 1023px) {

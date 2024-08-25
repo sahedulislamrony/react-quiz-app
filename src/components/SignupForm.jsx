@@ -98,7 +98,7 @@ export default function SignupForm() {
       </Checkbox>
 
       <Button type="submit " disabled={loading}>
-        {loading ? "Creating an account..." : "Submit Now"}
+        {loading ? "Loading..." : "Signin  Now"}
       </Button>
 
       {err && <div className="error">{err}</div>}

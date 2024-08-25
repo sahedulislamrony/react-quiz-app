@@ -2,6 +2,7 @@ import _ from "lodash";
 import { useLocation, useParams } from "react-router-dom";
 import useAnswers from "../../hooks/useAnswers";
 
+import PageTitle from "../PageTitle";
 import Analysis from "../Result/Analysis";
 import Summary from "../Result/Summary";
 
@@ -40,6 +41,7 @@ export default function Result() {
 
   return (
     <>
+      <PageTitle title="Result || React Quiz App" />
       {loading && <h2>Loading...</h2>}
       {error && <h2>There is an error </h2>}
       {!loading && !error && answers && answers.length > 0 && (

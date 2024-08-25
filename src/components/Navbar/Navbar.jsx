@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo-bg.png";
+import logo from "../../assets/images/logo.png";
 import css from "../../styles/Navbar.module.css";
 import Account from "./Account";
 

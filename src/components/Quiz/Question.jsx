@@ -82,12 +82,10 @@ export default function Question() {
   async function submit() {
     let { uid } = currentUser;
     const db = getDatabase();
-    const resultRef = ref(db, `result/${uid}`);
+    const resultRef = ref(db, `result/${uid}/${id}`);
 
     try {
-      await set(resultRef, {
-        [id]: quesCopy,
-      });
+      await set(resultRef, quesCopy);
 
       navigate(`/result/${id}`, {
         state: quesCopy,
