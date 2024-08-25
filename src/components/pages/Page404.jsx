@@ -10,10 +10,10 @@ export default function Page404() {
         color: "black",
       }}
     >
-      <h2>404 - Page Not Found !</h2>
-      <h3>
+      <h2>
+        404 - Page Not Found !{"     "}
         You can visit <Link to="/">Home</Link> .
-      </h3>
+      </h2>
     </div>
   );
 }

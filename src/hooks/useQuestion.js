@@ -26,9 +26,9 @@ export default function useQuestion(videoID) {
           setError(true);
         }
       } catch (err) {
-        console.log(err);
         setLoading(false);
         setError(true);
+        throw new Error(err);
       }
     }
 

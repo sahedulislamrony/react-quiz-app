@@ -3,7 +3,8 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 
-// import Page404 from "./components/pages/Page404";
+import NotFound from "./components/pages/NotFound";
+import Page404 from "./components/pages/Page404";
 import Quiz from "./components/pages/Quiz";
 import Result from "./components/pages/Result";
 import "./styles/global.css";
@@ -19,6 +20,10 @@ export default function App() {
       <AuthProvider>
         <Layout>
           <Routes>
+            {/* Page Not Found (404) Route */}
+            <Route path="*" element={<NotFound />} />
+            <Route path="/404" element={<Page404 />} />
+
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
 
@@ -31,10 +36,6 @@ export default function App() {
               <Route path="quiz/:id" element={<Quiz />} />
               <Route path="result/:id" element={<Result />} />
             </Route>
-
-            {/* Page Not Found (404) Route */}
-
-            {/* <Route path="*" element={<Page404 />} /> */}
           </Routes>
         </Layout>
       </AuthProvider>
