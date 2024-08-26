@@ -100,3 +100,15 @@
     transition: transform 0.3s ease;
   }
 }
+
+@media (max-width: 400px) {
+  .miniPlayer {
+    right: 15px;
+  }
+}
+
+@media (max-width: 330px) {
+  .miniPlayer {
+    display: none;
+  }
+}

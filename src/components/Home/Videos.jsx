@@ -16,7 +16,6 @@ function Videos() {
         <InfiniteScroll
           dataLength={videos.length}
           hasMore={hasMore}
-          loader={<h3>Loading...</h3>}
           next={() => setPage((prevPage) => prevPage + 8)}
         >
           {videos.map((video, index) =>

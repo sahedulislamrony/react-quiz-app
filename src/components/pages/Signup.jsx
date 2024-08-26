@@ -1,4 +1,4 @@
-import video from "../../assets/videos/signup2.mp4";
+import video from "../../assets/videos/signup.mp4";
 import Illustration from "../Illustration";
 import PageTitle from "../PageTitle";
 import SignupForm from "../SignupForm";
