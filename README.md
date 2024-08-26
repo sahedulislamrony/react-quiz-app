@@ -9,26 +9,31 @@ This project is built using [**`Vite`**](https://vitejs.dev/) , a fast build too
    ```sh
    git clone  git@github.com:sahedulislamrony/react-quiz-app.git
    ```
+2. **Navigate Directory**: Enter the project directory.
 
-2. **Install Dependencies**: Ensure you have all the necessary dependencies installed.
+   ```sh
+   cd  react-quiz-app
+   ```
+   
+3. **Install Dependencies**: Ensure you have all the necessary dependencies installed.
 
    ```sh
    npm install
    ```
 
-3. **Start the Development Server**: Run the app in development mode.
+4. **Start the Development Server**: Run the app in development mode.
 
    ```sh
    npm run dev
    ```
 
-4. **Build the App**: Create an optimized production build.
+5. **Build the App**: Create an optimized production build.
 
    ```sh
    npm run build
    ```
 
-5. **Run Tests**: Execute the test suite.
+6. **Run Tests**: Execute the test suite.
 
    ```sh
    npm run test
